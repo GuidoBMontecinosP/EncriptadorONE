@@ -1,0 +1,198 @@
+:root {
+    --color-blue: #0A3871;
+    --lightblue: #F3F5FC; /* Define la nueva variable */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Usa la fuente 'Roboto' de Google Fonts */
+    background-color: var(--lightblue);
+}
+
+/*header*/
+header {
+    background-color: var(--lightblue);
+}
+
+.header {
+    width: 90%;
+    margin: auto;
+}
+
+.header_logo {
+    margin-top: 40px;
+}
+
+/*main*/
+/* Estilos del contenedor principal */
+.main {
+    position: relative; /* Establece el contenedor como referencia para el posicionamiento absoluto */
+    width: 80.5%;
+    margin: auto 40px auto auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: calc(100vh - 91px - 72px);
+    align-items: start; /* Alinea los elementos hacia arriba */
+    gap: 20px; /* Ajusta el espacio entre los contenedores left y right */
+}
+
+
+/*left*/
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea los elementos al principio del contenedor */
+    height: 100%; /* Asegura que el contenedor ocupe el 100% de su altura */
+}
+
+.ingreso_texto {
+    width: 100%; /* Asegura que el textarea ocupe todo el ancho disponible */
+    height: 400px; /* Ajusta la altura según tus necesidades */
+    font-size: 32px;
+    color: var(--color-blue);
+    resize: none; /* Opcional: Evita que el usuario cambie el tamaño */
+    margin-bottom: 16px; /* Espacio debajo del textarea */
+    border: 2px solid #000; /* Borde negro */
+}
+
+.left_footer {
+    margin-bottom: 24px; /* Ajusta este valor para la distancia entre la advertencia y el botón encriptar */
+    color: var(--color-blue);
+}
+
+.left_footer span {
+    font-size: 16px; /* Tamaño del texto de advertencia */
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between; /* Alinea los botones horizontalmente */
+    margin-top: auto; /* Empuja los botones hacia abajo */
+    margin-bottom: 5px; /* Espacio entre los botones y el footer */
+    gap: 8px; /* Espacio entre los botones */}
+
+.encriptar, .desencriptar, .copiar {
+    width: 48%; /* Hace que los botones ocupen la misma altura y espacio horizontal */
+    height: 68px;
+    border-radius: 24px;
+    font-size: 16px;
+    transition: background-color 0.2s ease; /* Transición suave al cambiar el color */
+}
+
+.encriptar {
+    background-color: var(--color-blue); /* Fondo azul */
+    color: var(--lightblue); /* Texto con el nuevo color */
+    border: none;
+}
+
+.encriptar:active {
+    background-color: #072b55; /* Color más oscuro cuando se presiona */
+}
+
+.desencriptar {
+    background-color: var(--color-blue); /* Fondo azul */
+    color: var(--lightblue); /* Texto con el nuevo color */
+    border: none;
+}
+
+.desencriptar:active {
+    background-color: #072b55; /* Color más oscuro cuando se presiona */
+}
+
+.ingreso_texto::placeholder {
+    color: var(--color-blue);
+}
+
+/*right*/
+/* Estilos del contenedor .right */
+.right {
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 16px; /* Agrega esta línea para bordes redondeados */
+    border: 2px solid #000; /* Opcional: Añade un borde de 2px de grosor y color negro */
+}
+
+
+.textBox{
+    /* Estilo del contenedor de imagen */
+    position: relative;
+    width: 300px; /* Ajusta según el tamaño deseado */
+    height: 600px; /* Ajusta según el tamaño deseado */
+    background-color: #ffffff; /* Color de fondo, cámbialo si es necesario */
+    border: 2px solid #000; /* Borde negro */
+}
+
+
+.copiar {
+    background-color: var(--color-blue); /* Fondo azul igual que el botón encriptar */
+    color: var(--lightblue); /* Texto con el nuevo color */
+    width: 100%;
+}
+
+.copiar:active {
+    background-color: #072b55; /* Color más oscuro cuando se presiona */
+}
+
+.oculto{
+    display: block;
+}
+
+.mensaje_final{
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+.right.ajustar{
+    justify-content: space-between;
+}
+
+.right_info{
+    font-size: 16px;
+    text-align: center;
+}
+
+.left_info{
+    font-size: 16px;
+}
+
+
+
+/*celulares*/
+
+@media screen and (max-width: 800px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        width: 100%;
+        margin: auto;
+        min-height: auto; /* Ajusta la altura mínima */
+    }
+
+    .right,
+    .left {
+        width: 100%;
+        padding: 16px; /* Añade algo de padding para mejor apariencia */
+    }
+
+    .encriptar,
+    .desencriptar,
+    .copiar {
+        width: 100%; /* Hace que los botones ocupen todo el ancho en pantallas pequeñas */
+    }
+}
+
+
+    @media screen and (max-width: 500px) {
+        .encriptar,
+        .desencriptar {
+            width: 100%;
+        }
+    }
+    
